@@ -1,0 +1,165 @@
+/* ===== GLOBAL ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Inter:wght@500&display=swap');
+
+body {
+  background: radial-gradient(circle at top left, #fff5f5, #ffeaea);
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Decorative floating glow */
+body::before,
+body::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -1;
+}
+
+body::before {
+  top: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 150, 150, 0.3);
+}
+
+body::after {
+  bottom: -120px;
+  right: -120px;
+  width: 350px;
+  height: 350px;
+  background: rgba(255, 180, 180, 0.25);
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  background: linear-gradient(145deg, #b30000, #d10000);
+  color: white;
+  text-align: center;
+  border-radius: 25px;
+  max-width: 900px;
+  margin: 20vh auto;
+  padding: 90px 40px;
+  box-shadow: 0 10px 25px rgba(179, 0, 0, 0.4), 0 0 25px rgba(255, 50, 50, 0.2);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.8em;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 35px;
+}
+
+/* ===== BUTTONS ===== */
+.hero-buttons a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 30px;
+  margin: 0 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 2px solid white;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.hero-buttons a:hover {
+  background-color: white;
+  color: #b30000;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+.hero-buttons a:active {
+  transform: scale(0.95);
+}
+
+/* ===== ABOUT SECTION ===== */
+.about {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: white;
+}
+
+.about h2 {
+  color: #b30000;
+  margin-bottom: 20px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background-color: #800000;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9em;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* iPads, tablets */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 70px 25px;
+    margin: 8vh auto;
+    max-width: 90%;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons a {
+    font-size: 1rem;
+    padding: 10px 24px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+  .hero {
+    padding: 50px 20px;
+    margin: 6vh auto;
+    max-width: 95%;
+    border-radius: 18px;
+  }
+
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .hero-buttons a {
+    padding: 9px 20px;
+    font-size: 0.9rem;
+  }
+}
